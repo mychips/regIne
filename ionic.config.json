@@ -1,0 +1,7 @@
+{
+  "name": "regIne",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
