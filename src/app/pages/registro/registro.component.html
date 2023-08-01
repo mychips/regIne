@@ -1,0 +1,114 @@
+<hr><hr>
+<ion-content>
+  <h3 class="subtitulo encabezado">{{ titulo }} los datos del contribuyente</h3>
+  <ion-card>
+    <ion-list>
+      <form [formGroup]="forms" (ngSubmit)="crearRegistro()">
+        <ion-item>
+            <ion-input  class="form-control lista" 
+            label="Nombre Completo"
+            labelPlacement="floating"
+            placeholder="introduzca su nombre"
+            formControlName="nombres"
+            minlength="4"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista" 
+            label="Apellidos"
+            labelPlacement="floating"
+            placeholder="introduzca sus apellidos"
+            formControlName="apellidos"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input  class="form-control lista" 
+            label="Domicilio" 
+            labelPlacement="floating"
+            placeholder="Introduzca su domicilio"
+            formControlName="domicilio"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista" 
+            label="Clave de Elector"
+            labelPlacement="floating"
+            placeholder="Introduzca la clave de elector"
+            formControlName="claveIne"
+            maxlength="18"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista" 
+            label="CURP" 
+            labelPlacement="floating"
+            placeholder="Introduzca su CURP"
+            formControlName="curp"
+            maxlength="18"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista"
+            type="date"
+            label="Fecha de Nacimiento"
+            labelPlacement="floating"
+            placeholder="Introduzca su Fecha de Nacimiento"
+            formControlName="fechaNac"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista" 
+            label="Estado" 
+            labelPlacement="floating"
+            placeholder="Introduzca el estado"
+            formControlName="estado"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input class="form-control lista" 
+            label="Municipio" 
+            labelPlacement="floating" 
+            placeholder="Introduzca el municipio"
+            formControlName="municipio"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista" 
+            label="Sección" 
+            labelPlacement="floating"
+            type="number"
+            placeholder="Introduzca la sección"
+            formControlName="seccion"
+            maxlength="4"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista"
+            type="number"
+            label="Emision" 
+            labelPlacement="floating"
+            placeholder="Introduzca el año de emision"
+            formControlName="emision"
+            maxlength="4"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input  class="form-control lista"
+            type="number"
+            label="Vigencia" 
+            labelPlacement="floating" 
+            placeholder="Introduzca la fecha de vigencia"
+            formControlName="vigencia"></ion-input>
+          </ion-item>
+          <ion-grid>
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="5">
+                <ion-button type="submit" class="reg-button" color="success" size="small" expand="full" [disabled]="forms.invalid">
+                  <ion-icon class="p-2" name="server"></ion-icon>Guardar</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          </form>
+        </ion-list>
+      </ion-card>
+      </ion-content>

@@ -1,3 +1,50 @@
-<ion-app>
+<ion-menu contentId="main-content" menuId="main">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        MENU
+      </ion-title>
+        <ion-buttons slot="start">
+          <ion-button (click)="abrirMenu()">
+            <ion-icon  slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-item button="true" detail="true" [routerLink]="['/home']">
+      <ion-label>Home</ion-label>
+      <ion-icon slot="start" name="home"></ion-icon>
+    </ion-item>
+    <ion-item button="true" detail="true" [routerLink]="['/registro']">
+      <ion-label>Registrar Contribuyente</ion-label>
+      <ion-icon slot="start" name="create"></ion-icon>
+    </ion-item>
+    <ion-item button="true" detail="true" [routerLink]="['/listado']">
+      <ion-label>Lista de Contribuyentes</ion-label>
+      <ion-icon slot="start" name="list-circle"></ion-icon>
+    </ion-item>
+    <ion-item button="true" detail="true" [routerLink]="['/encuesta']">
+      <ion-label>Encuesta</ion-label>
+      <ion-icon slot="start" name="newspaper"></ion-icon>
+    </ion-item>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+          REGCONINE
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-button (click)="abrirMenu()">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+  </ion-content>
   <ion-router-outlet></ion-router-outlet>
-</ion-app>
+</div>

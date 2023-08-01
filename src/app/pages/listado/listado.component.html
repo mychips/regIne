@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-card>
+    <hr><hr>
+    <h3 class="encabezado text-center pt-2 mt-4">Listado de contribuyentes</h3>
+    <ion-item *ngFor="let registro of listaRegistros">
+      <ion-label class="normal">{{ registro.nombres }}</ion-label>
+      <ion-label class="normal">{{ registro.apellidos }}</ion-label>
+      <ion-label class="normal3">{{ registro.seccion }}</ion-label>
+      <ion-buttons>
+        <!-- <ion-button (click)="editarRegistro(registro)" [routerLink]="['/registro/id']">
+          <ion-icon name="create-sharp"></ion-icon>
+        </ion-button>-->
+        <ion-button (click)="borrarRegistro(registro.id)">
+          <ion-icon color="danger" name="trash-bin"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-card>
+</ion-content>

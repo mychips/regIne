@@ -1,0 +1,51 @@
+<ion-content>
+  <hr><hr>
+  <ion-card>
+    <h3 class="encabezado text-center pt-2 mt-4">Encuenta al contribuyente</h3>
+    <form>
+      <ion-item>
+        <ion-select [(ngModel)]="newEncuesta.pregunta1" interface="popover" placeholder="¿En que estado radicas?" name="pregunta1">
+          <ion-select-option value="1">Tabasco</ion-select-option>
+          <ion-select-option value="2">México</ion-select-option>
+          <ion-select-option value="3">Campeche</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="newEncuesta.pregunta2" interface="popover" placeholder="¿Rango de edad?" name="pregunta2">
+          <ion-select-option value="1">18 a 35 años</ion-select-option>
+          <ion-select-option value="2">36 a 55 años</ion-select-option>
+          <ion-select-option value="3">56 a 80 años</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="newEncuesta.pregunta3" interface="popover" placeholder="¿Tiene celular?" name="pregunta3">
+          <ion-select-option value="1">Si</ion-select-option>
+          <ion-select-option value="2">No</ion-select-option>
+          <ion-select-option value="3">Si pero de casa</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="newEncuesta.pregunta4" interface="popover" placeholder="Pregunta 4" name="pregunta4">
+          <ion-select-option value="1">Respuesta 1</ion-select-option>
+          <ion-select-option value="2">Respuesta 2</ion-select-option>
+          <ion-select-option value="3">Respuesta 3</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="newEncuesta.pregunta5" interface="popover" placeholder="Pregunta 5" name="pregunta5">
+          <ion-select-option value="1">Respuesta 1</ion-select-option>
+          <ion-select-option value="2">Respuesta 2</ion-select-option>
+          <ion-select-option value="3">Respuesta 3</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="guardarEncuesta()" type="submit" class="reg-button" color="success" size="small" expand="full">
+              <ion-icon class="p-2" name="server"></ion-icon>Guardar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-card>
+</ion-content>
