@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController, MenuController, ToastController } from '@ionic/angular';
 import { ContribuyenteIne } from 'src/app/models/contribuyente.model';
+import { CloudFireService } from 'src/app/services/cloud-fire.service';
 import { RegService } from 'src/app/services/reg.service';
 
 @Component({
@@ -11,14 +12,17 @@ import { RegService } from 'src/app/services/reg.service';
 export class ListadoComponent  implements OnInit {
 
   loading: any;
+  private path = 'Personas/';
 
   constructor( private regService: RegService, 
                public loadingController: LoadingController,
                public alertController: AlertController,
                public toastController: ToastController,
-               public menuController: MenuController ) { }
+               public menuController: MenuController,
+               public cloudFireService: CloudFireService ) { }
 
-  listaRegistros: ContribuyenteIne[]=[];
+  // listaRegistros: ContribuyenteIne[]=[];
+  personas: ContribuyenteIne[] = [];
 
   ngOnInit() {
     this.menuController.toggle('main');
@@ -28,20 +32,24 @@ export class ListadoComponent  implements OnInit {
   }
 
   listarRegistros(){
-    this.regService.listarRegistros().subscribe( res=>{
+    this.cloudFireService.getCollection<ContribuyenteIne>( this.path ).subscribe( res => {
       console.log(res);
-      this.listaRegistros = [];
-
-      res.forEach((element: any) => {
-        this.listaRegistros.push({
-          id:element.payload.doc.id, 
-          ...element.payload.doc.data()
-        })
+      this.personas = res;
+    });
+    // this.regService.listarRegistros().subscribe( res=>{
+    //   console.log(res);
+    //   this.listaRegistros = [];
+// 
+    //   res.forEach((element: any) => {
+    //     this.listaRegistros.push({
+    //       id:element.payload.doc.id, 
+    //       ...element.payload.doc.data()
+    //     })
         // console.log(element.payload.doc.id);
         // console.log(element.payload.doc.data());
-      });
+    //   });
       // console.log(this.listaRegistros);
-    })
+    // })
   }
 
   async borrarRegistro( id: any ){

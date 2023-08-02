@@ -31,4 +31,9 @@ export class CloudFireService {
   getId(){
     return this.database.createId();
   }
+
+  getCollection<tipo>( path: string ){
+    const collection = this.database.collection<tipo>( path );
+    return collection.valueChanges();
+  }
 }

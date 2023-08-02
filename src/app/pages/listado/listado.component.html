@@ -1,16 +1,16 @@
 <ion-content>
   <ion-card>
     <hr><hr>
-    <h3 class="encabezado text-center pt-2 mt-4">Listado de contribuyentes</h3>
-    <ion-item *ngFor="let registro of listaRegistros">
-      <ion-label class="normal">{{ registro.nombres }}</ion-label>
-      <ion-label class="normal">{{ registro.apellidos }}</ion-label>
-      <ion-label class="normal3">{{ registro.seccion }}</ion-label>
+    <h3 class="encabezado text-center pt-2 mt-4">Listado contribuyentes</h3>
+    <ion-item *ngFor="let persona of personas">
+      <ion-label class="normal">{{ persona.nombres }}</ion-label>
+      <ion-label class="normal">{{ persona.apellidos }}</ion-label>
+      <ion-label class="normal3">{{ persona.seccion }}</ion-label>
       <ion-buttons>
         <!-- <ion-button (click)="editarRegistro(registro)" [routerLink]="['/registro/id']">
           <ion-icon name="create-sharp"></ion-icon>
         </ion-button>-->
-        <ion-button (click)="borrarRegistro(registro.id)">
+        <ion-button (click)="borrarRegistro(persona.id)">
           <ion-icon color="danger" name="trash-bin"></ion-icon>
         </ion-button>
       </ion-buttons>
