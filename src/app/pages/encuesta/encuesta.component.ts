@@ -24,7 +24,9 @@ export class EncuestaComponent  implements OnInit {
   constructor( public menucontroller: MenuController,
                public cloudFireService: CloudFireService ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.menucontroller.toggle('main');
+  }
 
   guardarEncuesta(){
     const id = this.cloudFireService.getId();

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, MenuController, ToastController } from '@ionic/angular';
 import { ContribuyenteIne } from 'src/app/models/contribuyente.model';
 import { CloudFireService } from 'src/app/services/cloud-fire.service';
 import { RegService } from 'src/app/services/reg.service';
@@ -23,7 +23,8 @@ export class RegistroComponent  implements OnInit {
                private regService: RegService,
                public cloudFireService: CloudFireService,
                public loadingController: LoadingController,
-               public toastController: ToastController) { 
+               public toastController: ToastController,
+               public menucontroller: MenuController) { 
     
 
     this.forms = this.fb.group({
@@ -74,6 +75,7 @@ export class RegistroComponent  implements OnInit {
   }
 
   ngOnInit(): void {
+    this.menucontroller.toggle('main');
     this.regService.getRegistro().subscribe( res => {
       this.titulo = 'Edite';
       this.forms.patchValue({ 

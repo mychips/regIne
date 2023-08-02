@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, MenuController, ToastController } from '@ionic/angular';
 import { ContribuyenteIne } from 'src/app/models/contribuyente.model';
 import { RegService } from 'src/app/services/reg.service';
 
@@ -15,11 +15,13 @@ export class ListadoComponent  implements OnInit {
   constructor( private regService: RegService, 
                public loadingController: LoadingController,
                public alertController: AlertController,
-               public toastController: ToastController ) { }
+               public toastController: ToastController,
+               public menuController: MenuController ) { }
 
   listaRegistros: ContribuyenteIne[]=[];
 
   ngOnInit() {
+    this.menuController.toggle('main');
     // this.presentLoading();
     this.listarRegistros();
     // this.loading.dismiss();
